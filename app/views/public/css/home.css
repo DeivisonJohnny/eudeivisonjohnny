@@ -4,6 +4,8 @@
     box-sizing: border-box;
     font-family: "Plus Jakarta Sans", sans-serif;
     text-decoration: none;
+
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -79,7 +81,7 @@ header>button#menuBtn:hover {
 
 
 .menu {
-    background-color: rgba(17, 17, 17, 0.637);
+    background-color: rgba(17, 17, 17, 0.897);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -100,6 +102,8 @@ header>button#menuBtn:hover {
     transform: translateY(-100%);
 
     transition: 0.4s;
+
+    z-index: 2;
 }
 
 .menuShow {
@@ -230,6 +234,8 @@ main>section:nth-child(1) {
 
     min-height: calc(100vh - 85px);
     position: relative;
+
+    overflow-y: hidden;
 
 }
 
@@ -436,6 +442,9 @@ main>section>div a:hover {
     .imgHidden>div {
         display: flex;
     }
+    main>section:nth-child(1){
+        overflow-y: hidden;
+    }
 
     main>section>span>div:nth-child(2)>h2 {
         font-size: 4rem;
@@ -449,3 +458,265 @@ main>section>div a:hover {
         font-size: 3.4rem;
     }
 }
+
+
+@media screen and (max-width: 500px) {
+
+    header>h1 a {
+        letter-spacing: 1.5px;
+        font-size: 16px;
+    }
+
+    main>section:nth-child(1){
+        overflow-y: hidden;
+    }
+
+    .imgHidden {
+        width: 100%;
+        height: 214px;
+    }
+
+    main>section>span {
+
+        flex-direction: column;
+        height: 100%;
+    }
+
+    main>section>span>div:nth-child(2) {
+        line-height: 60px;
+    }
+
+    main>section>span>div:nth-child(2)>h2 {
+        font-size: 40px;
+    }
+
+    main>section>span>div:nth-child(2)>h3 {
+        font-size: 29px;
+    }
+
+    main>section>span>div:nth-child(2)>p {
+        font-size: 25px;
+    }
+
+
+}
+
+section:nth-child(2){
+    background-color: transparent;
+}
+
+
+/* SEGUNDA SESSÃO  */
+
+main > section#secTwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    background-color: #121212;
+
+    height: 100vh;
+    padding: 4rem 20px;
+
+    overflow-y: hidden;
+
+}
+
+main > section#secTwo > article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* gap: 40px; */
+    width: 40%;
+    height: 100%;
+}
+
+
+section#secTwo > article > .titleSec2 {
+    display: flex;
+    flex-direction: column;
+    /* width: calc(100%- 4px); */
+    gap: 10px;
+}
+
+section#secTwo > article > .titleSec2 h2 {
+    color: #02acac;
+    font-size: 18px;
+    /* font-weight: bold; */
+}
+
+section#secTwo > article > .titleSec2 h1 {
+    font-size: 44px;
+}
+
+#boxListForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    height: 348px;
+}
+
+#boxListForm::-webkit-scrollbar {
+    width: 3px;
+    display: block;
+}
+
+#boxListForm::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #02acac;
+}
+
+#boxListForm > .lineForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 20px;
+    border-left: 0.5px solid gray;
+    position: relative;
+    width: calc( 100% - 20px);
+    transition: 1s;
+    overflow-x: hidden;
+    opacity: 0%;
+}
+
+#boxListForm > .lineForm:nth-child(1n){
+    transition-delay: 1s;
+    transform: translateX(-100%);
+} 
+
+#boxListForm >.showLineForm:nth-child(1n){
+    width: calc( 100% - 20px);
+    overflow-x: visible;
+
+    opacity: 100%;
+    transform: translateX(0%);
+}
+
+.plataforma {
+    font-weight: bold;
+    color: rgb(122, 134, 131);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.periodo {
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #02acac;
+}
+
+.curso {
+    letter-spacing: 1.4px;
+}
+
+.descCurso {
+    color: rgb(167, 167, 167);
+}
+
+
+#boxListForm > .lineForm > .circle {
+    width: 15px;
+    height: 15px;
+    background-color: #02acac;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: -8px;
+}
+
+
+/* -------------2º article-------------------- */
+
+
+article > .listSkills {
+    height: 348px;
+}
+
+
+article > .listSkills > ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+article > .listSkills > ul > .liSkill {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    opacity: 0%;
+    transition: 1s;
+    transform: translateX(-100%);
+}
+
+article > .listSkills > ul > .liSkill:nth-child(1n){
+    transition-delay: 1s;
+}
+
+article > .listSkills > ul > .showliSkill {
+    opacity: 100%;
+    transform: translateX(0%);
+}
+
+
+article > .listSkills > ul > .liSkill span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+article > .listSkills > ul > .liSkill .progress-bar{
+    width: 100%;
+    background-color: gray;
+    height: 5px;
+}
+
+article > .listSkills > ul > .liSkill .progress {
+    background-color: #02acac;
+    height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    main > section#secTwo{
+        flex-direction: column;
+        height: 100%;
+        padding: 40px 40px;
+    }
+
+    main > section#secTwo > article {
+        width: 95%;
+        gap: 25px;
+    }
+    
+    main > section#secTwo > article:nth-child(1) {
+        padding: 40px 0px;
+        border-bottom: 0.5px solid rgb(41, 41, 41);
+    }
+}
+
+
+
+section#secTwo > article > .titleSec2 {
+    overflow-y: hidden;
+}
+
+.title1, .title2 {
+    transition: 1.5s;
+    transition-delay: 0.5s;
+    opacity: 0%;
+    transform: translateY(-100%);
+}
+
+.showTitle {
+    transform: translateY(0%);
+    opacity: 100%;
+}
+

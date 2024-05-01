@@ -32,7 +32,46 @@ function showElemMain(entries) {
 
 }
 
+function activeObserve(func, elem){
+    const observador = new IntersectionObserver(func)
+    
+    observador.observe(elem)
+}
 
-const observador = new IntersectionObserver(showElemMain)
+activeObserve(showElemMain, secMain)
 
-observador.observe(secMain)
+
+// ANIMAÇÃO ELEMENTOS 2 SESSÃO
+
+const sectwo = document.querySelector('#secTwo')
+
+function showElemTwo(entries) {
+
+    console.log(entries[0])
+
+    if(entries[0].isIntersecting) {
+        const title1 = document.querySelectorAll('.title1')
+        const title2 = document.querySelectorAll('.title2')
+        title1.forEach((title, ind) => {
+            title.classList.add('showTitle')
+            title2[ind].classList.add('showTitle')
+        });
+
+        const lineForm = document.querySelectorAll('.lineForm')
+
+        lineForm.forEach((line, ind) => {
+            line.classList.add('showLineForm')
+            
+        });
+
+        const liSkill = document.querySelectorAll('.liSkill')
+
+        liSkill.forEach((li) => {
+            li.classList.add('showliSkill')
+        })
+
+    }
+
+}
+
+activeObserve(showElemTwo, sectwo)
