@@ -720,3 +720,53 @@ section#secTwo > article > .titleSec2 {
     opacity: 100%;
 }
 
+/* -------------------------------------------
+            TERCEIRA SESSÃO / LISTA DE PORTIFÓLIO
+*/
+
+#secThree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('../img/bg-sec3.webp');
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#secThree > article {
+    background-color: #000000c2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(3px);
+}
+
+#secThree > article > h2 {
+    font-size: 30px;
+    padding: 40px 10px;
+    text-align: center;
+    color: white;
+}
+
+.listPortfolio {
+    display: grid;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: max-content;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    justify-content: center;
+
+}
+
+.itemPortfolio {
+    background-color: rgba(255, 255, 255, 0.456);
+    width: fit-content;
+    /* width: 400px; */
+}
